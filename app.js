@@ -18,7 +18,7 @@ function prayerTimes(latitude, longitude){
             time.innerHTML  = data[i];
             tableTbody.appendChild(row);
         }
-        
+
         table.appendChild(tableTbody);
         app.appendChild(table);
 
@@ -30,7 +30,8 @@ function success(position){
 }
 
 function error(){
-    alert('Posisi tidak dapat di akses');
+    //default menggunakan latitude dan longtitude Jakarta
+    prayerTimes('-6.200000', '106.816666');
 }
 
 function userLocation(){
