@@ -1,10 +1,10 @@
 function prayerTimes(latitude, longitude){
-    fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=4')
+    fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=2')
     .then(response => response.json())
     .then(function(response){
         let date        = new Date();
         let today       = date.getDate();
-        let data       = response.data[0].timings;
+        let data        = response.data[0].timings;
 
         let app         = document.getElementById('app');
         let table       = document.createElement('table');
@@ -26,6 +26,7 @@ function prayerTimes(latitude, longitude){
 }
 
 function success(position){
+    //Berdasarkan lokasi user
     prayerTimes(position.coords.latitude, position.coords.longitude);
 }
 
